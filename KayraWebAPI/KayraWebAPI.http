@@ -1,0 +1,6 @@
+@KayraWebAPI_HostAddress = http://localhost:5150
+
+GET {{KayraWebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
