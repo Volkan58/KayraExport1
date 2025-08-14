@@ -1,6 +1,5 @@
 ﻿using KayraWebAPI.Dtos;
 using KayraWebAPI.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace KayraWebAPI.Controllers
@@ -20,13 +19,13 @@ namespace KayraWebAPI.Controllers
         {
             try
             {
-                var products=await _productService.GetAllProductsAsync();
+                var products = await _productService.GetAllProductsAsync();
                 return Ok(products);
             }
             catch (Exception)
             {
 
-               return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while retrieving products.");
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while retrieving products.");
             }
         }
         [HttpGet("{id}")]

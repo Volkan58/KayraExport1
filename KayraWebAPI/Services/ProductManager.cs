@@ -80,20 +80,15 @@ namespace KayraWebAPI.Services
 
         public async Task<UpdateProductDto> UpdateProductAsync(UpdateProductDto updateProductDto)
         {
-            var existingProduct = _productRepository.GetProductByIdAsync(updateProductDto.Id);
+            var existingProduct =await _productRepository.GetProductByIdAsync(updateProductDto.Id);
             if (existingProduct != null)
             {
-                var product = new Product
-                {
-                    Id = updateProductDto.Id,
-                    Name = updateProductDto.Name,
-                    Description = updateProductDto.Description,
-                    Price = updateProductDto.Price,
-                    StockQuantity = updateProductDto.StockQuantity,
-                    CreatedAt = updateProductDto.CreatedAt,
-                    UpdatedAt = DateTime.UtcNow
-                };
-                var updatedProduct =await _productRepository.UpdateProductAsync(product);
+                existingProduct.Name = updateProductDto.Name;
+                existingProduct.Description = updateProductDto.Description;
+                existingProduct.Price = updateProductDto.Price;
+                existingProduct.StockQuantity = updateProductDto.StockQuantity;
+                existingProduct.UpdatedAt = DateTime.UtcNow;
+                var updatedProduct =await _productRepository.UpdateProductAsync(existingProduct);
                 return new UpdateProductDto
                 {
                     Id = updatedProduct.Id,
