@@ -1,4 +1,4 @@
-Bir Solution oluşturduktan sonra WebApplication oluşturup, istenen basit yapıdaki DTOS ve Models Klasörlerini oluşturup Model tanımlaması yaptım product id ve tip tanımlaması belirtilmediği için Guid olarak id tutmayı tercih ettim .
+Bir Solution oluşturduktan sonra WebAPİ oluşturup, istenen basit yapıdaki DTOS ve Models Klasörlerini oluşturup Model tanımlaması yaptım product id ve tip tanımlaması belirtilmediği için Guid olarak id tutmayı tercih ettim .
 Yine belirtilmediği için bazı değerler null geçilebilir ayarlaması yaptım.
 Tek dto içerisinde tanımlanabilirdi fakat ben ayırmayı seçtim.
 Paketleri kurmaya başladım .
